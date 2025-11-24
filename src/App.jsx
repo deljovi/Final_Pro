@@ -1,63 +1,40 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import LoginChoice from "./pages/auth/LoginChoice";
-import Navbar from "./components/layout/Navbar"; // Navbar user
-import NavbarAdmin from "./components/layout/NavbarAdmin"; // Navbar admin
+/* User */
 import Dashboard from "./pages/user/Dashboard";
 import Services from "./pages/user/Services";
 import Order from "./pages/user/Order";
-import Contact from "./pages/user/Contact";  
-import TrackingUser from "./pages/user/Tracking";
-import TrackingAdmin from "./pages/admin/TrackingAdmin";    
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import AdminOrders from "./pages/admin/AdminOrders"; // halaman admin untuk update status
-import ProtectedRoute from "./components/hoc/ProtectedRoute";
+import Contact from "./pages/user/Contact";
+import TrackingUser from "./pages/user/TrackingUser";
 
-function App() {
+/* Auth */
+import LoginChoice from "./pages/auth/LoginChoice";
+
+/* Admin */
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminOrders from "./pages/admin/AdminOrders";
+import TrackingAdmin from "./pages/admin/TrackingAdmin";
+
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Halaman login choice */}
+        {/* default pertama keluar */}
         <Route path="/" element={<LoginChoice />} />
 
-        {/* User Routes */}
-        <Route
-          path="/dashboard/*"
-          element={
-            <ProtectedRoute roleRequired="user">
-              <Navbar />
-              <Routes>
-                <Route index element={<Dashboard />} />
-                <Route path="services" element={<Services />} />
-                <Route path="order" element={<Order />} />
-                <Route path="contact" element={<Contact />} />
-                <Route path="tracking" element={<TrackingUser />} />             
-                </Routes>
-            </ProtectedRoute>
-          }
-        />
+        {/* user */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/orders" element={<Order />} />
+        <Route path="/tracking" element={<TrackingUser />} />
+        <Route path="/contact" element={<Contact />} />
 
-        {/* Admin Routes */}
-        <Route
-          path="/admin/*"
-          element={
-            <ProtectedRoute roleRequired="admin">
-              <NavbarAdmin />
-              <Routes>
-                <Route index element={<AdminDashboard />} />
-                <Route path="orders" element={<AdminOrders />} /> {/* halaman kelola pesanan */}
-                <Route path="tracking" element={<TrackingAdmin />} />
-              </Routes>
-            </ProtectedRoute>
-          }
-        />
-
-        {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" />} />
+        {/* admin */}
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/orders" element={<AdminOrders />} />
+        <Route path="/admin/tracking" element={<TrackingAdmin />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;

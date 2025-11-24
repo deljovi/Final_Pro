@@ -1,11 +1,19 @@
-import React from "react"; // import react library
-import ReactDOM from "react-dom/client"; // import react-dom for rendering
-import App from "./App"; // import main app component
-import "./index.css"; // import global styles
+// main.jsx
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render( // render the app
-  <React.StrictMode>                                         {/*enable strict mode*/}
-    <App />                                                {/* render main app component */}
-  </React.StrictMode>                                       // end strict mode
-);
-    
+// hydrate theme from localStorage early to avoid FOUC
+(function initTheme() {
+  try {
+    const saved = localStorage.getItem("app_theme");
+    if (saved === "dark") document.documentElement.classList.add("dark");
+    else if (saved === "light") document.documentElement.classList.remove("dark");
+    // if not saved, prefer system (do nothing: CSS variables handle it via prefers-color-scheme fallback)
+  } catch (e) {
+    // ignore
+  }
+})();
+
+createRoot(document.getElementById("root")).render(<App />);
