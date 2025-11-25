@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  *  - size: 'sm' | 'md' | 'lg'
  */
 const VARIANT_CLASSES = {
-  primary: "bg-blue-600 hover:bg-blue-700 text-white",
+  primary: "bg-coffee-600 hover:bg-coffee-700 text-white",
   secondary: "bg-gray-200 hover:bg-gray-300 text-gray-900",
   ghost: "bg-transparent hover:bg-gray-50 text-gray-900",
 };
@@ -24,7 +24,7 @@ const Button = ({ children, onClick, type = "button", variant = "primary", size 
     <button
       type={type}
       onClick={onClick}
-      className={`inline-flex items-center justify-center rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition ${VARIANT_CLASSES[variant]} ${SIZE_CLASSES[size]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-coffee-300 transition ${VARIANT_CLASSES[variant]} ${SIZE_CLASSES[size]} ${className}`}
       {...rest}
     >
       {children}

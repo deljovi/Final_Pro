@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function LoginChoice() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 via-white to-blue-100 overflow-hidden px-4">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-coffee-100 via-white to-coffee-50 overflow-hidden px-4">
       
       {/* Background Animated Text at Top Left */}
       <h1 className="absolute top-10 left-10 text-[6rem] font-extrabold select-none pointer-events-none text-gray-300/50 uppercase animate-float text-shadow-lg">
@@ -17,14 +17,14 @@ export default function LoginChoice() {
 
         <Link
           to="/dashboard"
-          className="w-64 text-center bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white px-6 py-4 rounded-2xl font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
+          className="w-64 text-center bg-gradient-to-r from-coffee-500 via-coffee-600 to-coffee-700 text-white px-6 py-4 rounded-2xl font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
         >
           User
         </Link>
 
         <Link
           to="/admin/dashboard"
-          className="w-64 text-center bg-gradient-to-r from-green-400 via-teal-500 to-emerald-500 text-white px-6 py-4 rounded-2xl font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
+          className="w-64 text-center bg-gradient-to-r from-coffee-400 via-coffee-500 to-coffee-600 text-white px-6 py-4 rounded-2xl font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
         >
           Admin
         </Link>

@@ -5,52 +5,39 @@ import Navbar from "../../components/layout/Navbar";
 export default function Services() {
   const layanan = [
     {
-      title: "Reguler (3 Hari)",
+      title: "Coffee",
       items: [
-        { type: "Lipat", price: "5000/kg" },
-        { type: "Setrika", price: "7000/kg" },
+        { type: "Espresso (Single)", price: "20000/cup" },
+        { type: "Americano", price: "25000/cup" },
+        { type: "Cappuccino", price: "30000/cup" },
       ],
     },
     {
-      title: "Express (1 Hari)",
+      title: "Cold Brew & Iced",
       items: [
-        { type: "Lipat", price: "9000/kg" },
-        { type: "Setrika", price: "13000/kg" },
+        { type: "Iced Latte", price: "32000/cup" },
+        { type: "Cold Brew", price: "35000/cup" },
       ],
     },
     {
-      title: "Kilat (6 Jam)",
+      title: "Tea & Others",
       items: [
-        { type: "Lipat", price: "13000/kg" },
-        { type: "Setrika", price: "18000/kg" },
+        { type: "Green Tea", price: "22000/cup" },
+        { type: "Chai Latte", price: "28000/cup" },
       ],
     },
     {
-      title: "Bed Cover",
+      title: "Pastries",
       items: [
-        { type: "Reguler Kecil-Sedang", price: "30000/pcs" },
-        { type: "Reguler Besar", price: "40000/pcs" },
-        { type: "Express", price: "55000/pcs" },
+        { type: "Croissant", price: "18000/pcs" },
+        { type: "Blueberry Muffin", price: "20000/pcs" },
       ],
     },
     {
-      title: "Sprei",
+      title: "Sandwiches",
       items: [
-        { type: "Reguler", price: "12000/pcs" },
-        { type: "Express", price: "18000/pcs" },
-        { type: "Kilat", price: "25000/pcs" },
-      ],
-    },
-    {
-      title: "Baby Laundry",
-      items: [
-        { type: "Sleek Baby & Detol", price: "20000/kg" },
-      ],
-    },
-    {
-      title: "Cuci Baby Stroller",
-      items: [
-        { type: "Full Service", price: "150000/stroller (4-5 Hari)" },
+        { type: "Chicken Sandwich", price: "45000/pcs" },
+        { type: "Veggie Sandwich", price: "42000/pcs" },
       ],
     },
   ];
@@ -61,7 +48,7 @@ export default function Services() {
 
       <main className="max-w-6xl mx-auto p-6">
         <h1 className="text-4xl font-bold mb-10 text-center text-gray-800">
-          Pilih Layanan Laundry
+          Pilih Menu Coffeshop
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -71,7 +58,7 @@ export default function Services() {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
             >
               {/* Header dengan gradient */}
-              <div className="p-5 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white">
+              <div className="p-5 bg-gradient-to-r from-coffee-500 via-coffee-600 to-coffee-700 text-white">
                 <h2 className="text-xl font-semibold">{lay.title}</h2>
               </div>
 
@@ -80,7 +67,7 @@ export default function Services() {
                   <Link
                     key={i}
                     to={`/orders?service=${lay.title}&type=${item.type}&price=${item.price}`}
-                    className="block p-3 border border-gray-200 rounded-lg hover:bg-blue-50 hover:scale-105 transition-transform duration-200"
+                    className="block p-3 border border-gray-200 rounded-lg hover:bg-coffee-50 hover:scale-105 transition-transform duration-200"
                   >
                     <p className="font-medium text-gray-800">{item.type}</p>
                     <p className="text-sm text-gray-500">{item.price}</p>

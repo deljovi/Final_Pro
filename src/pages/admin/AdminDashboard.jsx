@@ -51,7 +51,7 @@ export default function AdminDashboard() {
   const completedOrders = orders.filter((o) => o.status === "Selesai").length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-coffee-50 via-coffee-100 to-coffee-200 font-sans">
       <NavbarAdmin />
 
       <main className="max-w-6xl mx-auto p-6">
@@ -73,7 +73,7 @@ export default function AdminDashboard() {
 
           <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200">
             <p className="text-gray-500">Diproses</p>
-            <p className="text-3xl font-bold text-blue-600 mt-2">{processingOrders}</p>
+            <p className="text-3xl font-bold text-coffee-600 mt-2">{processingOrders}</p>
           </div>
 
           <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200">
@@ -98,8 +98,8 @@ export default function AdminDashboard() {
                 <Bar dataKey="count" fill="url(#colorBar)" radius={[6, 6, 0, 0]} />
                 <defs>
                   <linearGradient id="colorBar" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#7f1dff" stopOpacity={0.8} />
-                    <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.8} />
+                    <stop offset="0%" stopColor="#a86b2a" stopOpacity={0.9} />
+                    <stop offset="100%" stopColor="#653713" stopOpacity={0.9} />
                   </linearGradient>
                 </defs>
               </BarChart>

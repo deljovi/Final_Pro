@@ -4,16 +4,14 @@ import { useSearchParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 // =======================
-// DATA LAYANAN
+// MENU DATA (Coffeshop)
 // =======================
 const serviceData = {
-  "Reguler (3 Hari)": { Lipat: "5000/kg", Setrika: "7000/kg" },
-  "Express (1 Hari)": { Lipat: "9000/kg", Setrika: "13000/kg" },
-  "Kilat (6 Jam)": { Lipat: "13000/kg", Setrika: "18000/kg" },
-  "Bed Cover": { "Reguler Kecil-Sedang": "30000/pcs", "Reguler Besar": "40000/pcs", Express: "55000/pcs" },
-  Sprei: { Reguler: "12000/pcs", Express: "18000/pcs", Kilat: "25000/pcs" },
-  "Baby Laundry": { "Sleek Baby & Detol": "20000/kg" },
-  "Cuci Baby Stroller": { Standard: "150000/stroller" },
+  Coffee: { "Espresso (Single)": "20000/cup", Americano: "25000/cup", Cappuccino: "30000/cup" },
+  "Cold Brew & Iced": { "Iced Latte": "32000/cup", "Cold Brew": "35000/cup" },
+  "Tea & Others": { "Green Tea": "22000/cup", "Chai Latte": "28000/cup" },
+  Pastries: { Croissant: "18000/pcs", "Blueberry Muffin": "20000/pcs" },
+  Sandwiches: { "Chicken Sandwich": "45000/pcs", "Veggie Sandwich": "42000/pcs" },
 };
 
 export default function Order() {
@@ -36,11 +34,11 @@ export default function Order() {
   const extractNumber = (value) => (value ? Number(value.replace(/[^0-9]/g, "")) : 0);
   const numericPrice = extractNumber(price);
 
-  const lowerService = service.toLowerCase();
-  const lowerType = type.toLowerCase();
-  const isPCS = lowerService.includes("sprei") || lowerService.includes("bed cover") || lowerType.includes("sprei") || lowerType.includes("bed cover");
-  const isStroller = lowerService.includes("stroller") || lowerType.includes("stroller");
-  const unit = isPCS ? "pcs" : isStroller ? "stroller" : "kg";
+  // Determine unit from price string (cup, pcs, etc.)
+  const lowerPrice = price ? price.toLowerCase() : "";
+  let unit = "item";
+  if (lowerPrice.includes("/pcs") || lowerPrice.includes("pcs") || lowerPrice.includes("/piece") || lowerPrice.includes("piece")) unit = "pcs";
+  else if (lowerPrice.includes("/cup") || lowerPrice.includes("cup") || lowerPrice.includes("/glass") || lowerPrice.includes("glass")) unit = "cup";
 
   useEffect(() => {
     setTotal(numericPrice * qty);
@@ -112,7 +110,7 @@ export default function Order() {
 
       <main className="max-w-3xl mx-auto p-6">
         <h1 className="text-4xl font-bold mb-10 text-center text-gray-800">
-          Form Pemesanan Laundry
+          Form Pemesanan Coffeshop
         </h1>
 
         <div className="bg-white shadow-xl rounded-2xl p-6 space-y-6">
@@ -123,7 +121,7 @@ export default function Order() {
               <select
                 value={service}
                 onChange={(e) => handleServiceChange(e.target.value)}
-                className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-400 transition"
+                className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-coffee-300 transition"
                 required
               >
                 <option value="">-- pilih layanan --</option>
@@ -139,7 +137,7 @@ export default function Order() {
                 <select
                   value={type}
                   onChange={(e) => handleTypeChange(e.target.value)}
-                  className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-400 transition"
+                  className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-coffee-300 transition"
                   required
                 >
                   <option value="">-- pilih tipe --</option>
@@ -151,9 +149,9 @@ export default function Order() {
             )}
 
             {price && (
-              <div className="p-3 bg-blue-50 border-l-4 border-blue-500 rounded">
-                <p className="font-semibold text-blue-700 text-lg">Harga: {price}</p>
-              </div>
+                  <div className="p-3 bg-coffee-50 border-l-4 border-coffee-500 rounded">
+                    <p className="font-semibold text-coffee-700 text-lg">Harga: {price}</p>
+                  </div>
             )}
           </div>
 
@@ -164,7 +162,7 @@ export default function Order() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 transition"
+                className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-coffee-300 transition"
               />
             </label>
 
@@ -174,7 +172,7 @@ export default function Order() {
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 transition"
+                className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-coffee-300 transition"
               />
             </label>
 
@@ -183,7 +181,7 @@ export default function Order() {
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 transition"
+                className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-coffee-300 transition"
               ></textarea>
             </label>
 
@@ -196,14 +194,14 @@ export default function Order() {
                   required
                   value={qty}
                   onChange={(e) => setQty(Number(e.target.value))}
-                  className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 transition"
+                  className="mt-2 w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-coffee-300 transition"
                 />
               </label>
             )}
 
             {price && (
-              <div className="p-4 border rounded-lg bg-green-50 border-l-4 border-green-500">
-                <p className="text-lg font-semibold text-green-700">
+              <div className="p-4 border rounded-lg bg-coffee-50 border-l-4 border-coffee-500">
+                <p className="text-lg font-semibold text-coffee-700">
                   Total Harga: <span className="font-bold">Rp {total.toLocaleString()}</span>
                 </p>
               </div>
@@ -212,7 +210,7 @@ export default function Order() {
             <button
               type="submit"
               className={`p-3 rounded-xl text-white font-semibold text-lg transition transform hover:scale-105 ${
-                service && type && price ? "bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:from-blue-600 hover:to-purple-600" : "bg-gray-400 cursor-not-allowed"
+                 service && type && price ? "bg-gradient-to-r from-coffee-500 via-coffee-600 to-coffee-700 hover:from-coffee-600 hover:to-coffee-800" : "bg-gray-400 cursor-not-allowed"
               }`}
               disabled={!service || !type || !price}
             >

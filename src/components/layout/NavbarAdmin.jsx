@@ -7,8 +7,8 @@ const LinkItem = ({ to, children }) => (
     className={({ isActive }) =>
       `px-3 py-2 rounded-md text-sm font-medium ${
         isActive
-          ? "bg-indigo-600 text-white"
-          : "text-white/90 hover:bg-indigo-500/40"
+          ? "bg-coffee-600 text-white"
+          : "text-white/90 hover:bg-coffee-500/40"
       }`
     }
   >
@@ -18,7 +18,7 @@ const LinkItem = ({ to, children }) => (
 
 export default function NavbarAdmin() {
   return (
-    <header className="bg-indigo-700 text-white shadow">
+    <header className="bg-coffee-700 text-white shadow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <h1 className="text-xl font-semibold">Admin Panel</h1>
@@ -31,7 +31,7 @@ export default function NavbarAdmin() {
 
           <NavLink
             to="/"
-            className="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-sm"
+            className="px-3 py-2 bg-coffee-600 hover:bg-coffee-700 text-white rounded-md text-sm"
           >
             Keluar
           </NavLink>

@@ -15,7 +15,7 @@ export default function Contact() {
             href="mailto:fieken@example.com"
             className="flex items-center gap-3 p-4 border rounded-lg hover:bg-gray-50 transition"
           >
-            <Mail className="w-6 h-6 text-blue-600" />
+            <Mail className="w-6 h-6 text-coffee-600" />
             <span className="text-gray-700 font-medium">FrontEnd@example.com</span>
           </a>
 
@@ -25,7 +25,7 @@ export default function Contact() {
             target="_blank"
             className="flex items-center gap-3 p-4 border rounded-lg hover:bg-gray-50 transition"
           >
-            <Linkedin className="w-6 h-6 text-blue-700" />
+            <Linkedin className="w-6 h-6 text-coffee-700" />
             <span className="text-gray-700 font-medium">linkedin.com/in/FrontEnd</span>
           </a>
 

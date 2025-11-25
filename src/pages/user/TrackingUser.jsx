@@ -30,7 +30,7 @@ export default function AdminDashboardPremium() {
         {/* Table Pesanan */}
         <div className="bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-6 border border-slate-200">
           <table className="w-full text-sm border-collapse">
-            <thead className="bg-gradient-to-r from-purple-400 to-indigo-500 text-white">
+            <thead className="bg-gradient-to-r from-coffee-500 via-coffee-600 to-coffee-700 text-white">
               <tr>
                 <th className="p-3 text-left">ID</th>
                 <th className="p-3 text-left">Nama</th>
@@ -56,11 +56,11 @@ export default function AdminDashboardPremium() {
                   <td className="p-3">
                     <span
                       className={`px-3 py-1 rounded-full text-white font-semibold ${
-                        item.status === "Selesai"
-                          ? "bg-green-600"
-                          : item.status === "Diproses"
-                          ? "bg-yellow-500"
-                          : "bg-gray-500"
+                          item.status === "Selesai"
+                            ? "bg-green-600"
+                            : item.status === "Diproses"
+                            ? "bg-coffee-400"
+                            : "bg-coffee-200 text-coffee-800"
                       }`}
                     >
                       {item.status || "Pending"}
