@@ -86,8 +86,8 @@ export default function AdminTrackingFinal() {
 
   const statusStep = ["Pending", "Diproses", "Selesai"];
   const statusColor = {
-    Pending: "bg-yellow-400 text-yellow-800",
-    Diproses: "bg-blue-400 text-blue-800",
+    Pending: "bg-coffee-200 text-coffee-800",
+    Diproses: "bg-coffee-400 text-coffee-900",
     Selesai: "bg-green-400 text-green-800",
   };
 
@@ -102,7 +102,7 @@ export default function AdminTrackingFinal() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-gradient-to-tr from-blue-50 via-indigo-50 to-purple-50 animate-gradient-bg">
+    <div className="min-h-screen font-sans bg-gradient-to-tr from-coffee-50 via-coffee-100 to-coffee-200 animate-gradient-bg">
       <NavbarAdmin />
       <main className="max-w-5xl mx-auto p-6">
         <h1 className="text-4xl font-bold mb-6 text-gray-800 text-center">
@@ -146,7 +146,7 @@ export default function AdminTrackingFinal() {
                     >
                       Hapus
                     </button>
-                    <button className="px-4 py-1 rounded-lg bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition-all">
+                    <button className="px-4 py-1 rounded-lg bg-coffee-500 text-white font-semibold shadow hover:bg-coffee-600 transition-all">
                       Detail
                     </button>
                   </div>
@@ -161,7 +161,7 @@ export default function AdminTrackingFinal() {
                     {/* Animated Gradient Progress Bar */}
                     <div className="relative h-4 bg-gray-200 rounded-full mb-4 overflow-hidden">
                       <div
-                        className="absolute h-4 rounded-full transition-all duration-700 ease-out bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"
+                        className="absolute h-4 rounded-full transition-all duration-700 ease-out bg-gradient-to-r from-coffee-400 via-coffee-500 to-coffee-700"
                         style={{ width: `${progressPercent}%` }}
                       ></div>
                     </div>
@@ -178,7 +178,7 @@ export default function AdminTrackingFinal() {
                           onClick={() => updateStatus(item.id, status)}
                           className={`py-2 rounded-full cursor-pointer transition-all ${
                             currentStep - 1 >= index
-                              ? "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 text-white shadow-md"
+                              ? "bg-gradient-to-r from-coffee-400 via-coffee-500 to-coffee-700 text-white shadow-md"
                               : "bg-gray-200 text-gray-500"
                           }`}
                         >

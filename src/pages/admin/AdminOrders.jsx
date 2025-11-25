@@ -57,8 +57,8 @@ export default function AdminOrders() {
                         order.status === "Selesai"
                           ? "bg-green-600"
                           : order.status === "Diproses"
-                          ? "bg-yellow-500"
-                          : "bg-gray-500"
+                          ? "bg-coffee-400"
+                          : "bg-coffee-200 text-coffee-800"
                       }`}
                     >
                       {order.status || "Pending"}
@@ -66,7 +66,7 @@ export default function AdminOrders() {
                   </td>
                   <td className="p-3 text-gray-700">{order.total.toLocaleString()}</td>
                   <td className="p-3">
-                    <button className="px-3 py-1 bg-blue-600 text-white rounded text-sm">
+                    <button className="px-3 py-1 bg-coffee-600 text-white rounded text-sm">
                       Detail
                     </button>
                   </td>

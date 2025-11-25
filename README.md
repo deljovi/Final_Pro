@@ -1,10 +1,10 @@
-# Laundry-New - Premium Laundry Management System
+# Coffeshop-New - Premium Coffeshop Management System
 
-A modern, premium laundry management web application built with Vite, React, and Tailwind CSS featuring a clean, minimalistic, and futuristic design.
+A modern, premium coffeshop web application built with Vite, React, and Tailwind CSS featuring a clean, minimalistic, and cozy design.
 
 ## Features
 
-- **Full CRUD Operations**: Create, Read, Update, Delete laundry orders
+- **Full CRUD Operations**: Create, Read, Update, Delete coffeshop orders
 - **Premium Design**: Glassmorphism effects, gradient backgrounds, subtle animations
 - **Responsive Layout**: Works seamlessly on desktop and mobile devices
 - **Real-time Data**: JSON Server for backend simulation
@@ -43,18 +43,18 @@ A modern, premium laundry management web application built with Vite, React, and
 - `animate-fade-in`: Smooth fade-in with slight upward movement
 - `animate-slide-in`: Slide-in from top with opacity
 - `animate-bounce-subtle`: Subtle bouncing effect
-
+# Coffeshop-New - Premium Coffeshop Management System
 ### Custom Utilities
-- `text-gradient`: Gradient text effect
+A modern, premium coffeshop web application built with Vite, React, and Tailwind CSS featuring a clean, minimalistic, and cozy design.
 - `gradient-bg`: Full background gradient
 - `glass-input`: Glassmorphism input styling
 
-## Wireframe / Layout Description
+- **Full CRUD Operations**: Create, Read, Update, Delete coffeshop orders
 
 ### Overall Layout
 - **Navbar**: Fixed top with logo, menu toggle (mobile), and user avatar
 - **Sidebar**: Collapsible navigation menu with icons and labels
-- **Main Content**: Flexible area with page-specific content
+Coffeshop-New/
 
 ### Dashboard Page
 - Header with title and action button
@@ -76,7 +76,7 @@ A modern, premium laundry management web application built with Vite, React, and
 ## Project Structure
 
 ```
-Laundry-New/
+Coffeshop-New/
 ├── db.json                    # JSON Server database
 ├── index.html                 # Main HTML file
 ├── package.json               # Dependencies and scripts
@@ -99,11 +99,6 @@ Laundry-New/
     │   └── EditPage.jsx       # Edit existing order form
     ├── App.jsx                # Main app component with routing
     ├── main.jsx               # App entry point
-    └── index.css              # Global styles and utilities
-```
-
-## Installation & Setup
-
 1. **Clone or download the project**
 2. **Install dependencies**:
    ```bash
@@ -151,26 +146,12 @@ Laundry-New/
 <Button variant="danger">Delete</Button>
 <Button variant="ghost">Cancel</Button>
 ```
-
-### Card Usage
-```jsx
-<Card className="p-6">
-  <h3>Card Title</h3>
-  <p>Card content...</p>
 </Card>
 ```
 
-### Modal Usage
-```jsx
-<Modal isOpen={isOpen} onClose={closeModal} title="Modal Title">
-  <p>Modal content...</p>
-  <div className="flex justify-end space-x-3">
-    <Button variant="secondary" onClick={closeModal}>Cancel</Button>
-    <Button variant="primary">Confirm</Button>
   </div>
-</Modal>
 ```
-
+Built with ❤️ using modern web technologies for a premium coffeshop management experience.
 ## Design Philosophy
 
 - **Minimalism**: Clean layouts with ample white space
@@ -192,4 +173,4 @@ Laundry-New/
 
 ---
 
-Built with ❤️ using modern web technologies for a premium laundry management experience.
+Built with ❤️ using modern web technologies for a premium coffeshop management experience.

@@ -1,15 +1,15 @@
-# TODO List for Laundry-New Premium CRUD App
+# TODO List for Coffeshop-New Premium CRUD App
 
 ## Project Setup
-- [x] Create Vite React project in Laundry-New folder
+- [x] Create Vite React project in Coffeshop-New folder
 - [x] Install Tailwind CSS and dependencies
 - [x] Configure Tailwind with custom colors and animations
-- [x] Create db.json for JSON Server with sample laundry data
+- [x] Create db.json for JSON Server with sample coffeshop data
 
 ## Folder Structure
 - [x] Create src/components/ for reusable components (Navbar, Sidebar, Button, Card, Modal, Input, Table)
 - [x] Create src/pages/ for pages (Dashboard, ListView, CreatePage, EditPage)
-- [ ] Create src/hooks/ for API hooks (useLaundryData)
+- [ ] Create src/hooks/ for API hooks (useCoffeshopData)
 - [ ] Create src/utils/ for utilities (api.js)
 
 ## Reusable Components
